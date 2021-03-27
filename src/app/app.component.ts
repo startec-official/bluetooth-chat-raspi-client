@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   addMessage(newMessage: string, _self?: boolean) {
-    if (!!self)
+    if (!!_self)
       _self = true;
     this.messages.push({ msg: newMessage, self: _self });
   }
