@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from './utils/data.service';
 
 @Component({
@@ -8,9 +8,9 @@ import { DataService } from './utils/data.service';
 })
 export class AppComponent implements OnInit {
   title = 'angular-chat-demo';
-  public messages: any[];
+  public messages: { msg: string, self: boolean }[];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
     this.messages = [
@@ -23,9 +23,14 @@ export class AppComponent implements OnInit {
     });
   }
 
-  addMessage(newMessage: string, self?: boolean) {
-    if(!!self)
-      self = true;
-    this.messages.push({msg: newMessage, self: self});
+  sendMessage(message: string) {
+    this.dataService.sendMessage(message);
+    this.addMessage(message, true);
+  }
+
+  addMessage(newMessage: string, _self?: boolean) {
+    if (!!self)
+      _self = true;
+    this.messages.push({ msg: newMessage, self: _self });
   }
 }

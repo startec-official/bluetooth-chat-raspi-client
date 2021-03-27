@@ -13,4 +13,8 @@ export class DataService {
   getMessage() {
     return this.socket.fromEvent('message').pipe(map((data:any) => data.msg));
   }
+
+  sendMessage(message: string) {
+    this.socket.emit('message', message);
+  }
 }
