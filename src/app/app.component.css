@@ -1,0 +1,26 @@
+.bubble {
+    padding: 1em;
+    background-color: #eaeaea;
+    border-radius: 1em;
+    width: fit-content;
+    margin-bottom: 1em;
+}
+
+.profile {
+    width: 32px;
+    height: 32px;
+    background-color: grey;
+    border-radius: 100%;
+}
+
+.self {
+    background-color: #006AFF;
+    color: white;
+}
+
+.chatbox {
+    position: fixed;
+    width: 80%;
+    bottom: 0;
+    margin-bottom: 5em;
+}
