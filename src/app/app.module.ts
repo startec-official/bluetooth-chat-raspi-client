@@ -5,8 +5,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 import { AppComponent } from './app.component';
+import { environment } from 'src/environments/environment';
 
-const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
+const config: SocketIoConfig = { url: environment.socketServerURL, options: {} };
 
 @NgModule({
   declarations: [
