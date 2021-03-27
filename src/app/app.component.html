@@ -6,22 +6,20 @@
 </nav>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <div class="bubble from">hello there</div>
-      <div class="bubble float-right self">hello there</div>
-    </div>
+  <div class="row" *ngFor="let m of messages">
+    <div class="bubble" [ngClass]="{'ml-auto': m.self, 'self': m.self}">{{m.msg}}</div>
   </div>
   <div class="row chatbox">
     <div class="col-sm-12">
       <hr>
-      <form class="form-inline">
+      <div class="form-inline">
         <div class="form-group mx-sm-3 mb-2" style="width: 80%;">
           <label for="inputPassword2" class="sr-only">Password</label>
-          <input type="text" class="form-control" id="inputPassword2" placeholder="" style="width: 100%;">
+          <input type="text" class="form-control" id="inputPassword2" placeholder="" style="width: 100%;" #messageBox>
         </div>
-        <button type="submit" class="btn btn-primary mb-2"><i class="fa fa-send mr-2"></i>Send</button>
-      </form>
+        <button class="btn btn-primary mb-2" (click)="addMessage(messageBox.value)"><i
+            class="fa fa-send mr-2"></i>Send</button>
+      </div>
     </div>
   </div>
 </div>
