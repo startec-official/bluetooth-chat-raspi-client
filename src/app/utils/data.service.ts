@@ -7,4 +7,8 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor(private http: HttpClient) { }
+
+  recieveData() {
+    
+  }
 }
