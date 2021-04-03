@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from './utils/data.service';
 
 @Component({
@@ -13,10 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit(): void {
-    this.messages = [
-      { msg: 'hello there', self: false },
-      { msg: 'oh hi', self: true }
-    ];
+    this.messages = [];
 
     this.dataService.getMessage().subscribe(newMessage => {
       this.addMessage(newMessage, false);
